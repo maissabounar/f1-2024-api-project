@@ -1,20 +1,22 @@
 import requests
 import csv
 
-# URL de l'API OpenF1 pour les informations sur les pilotes
+# API endpoint to fetch F1 driver information
 url = "https://api.openf1.org/v1/drivers"
 
-# Appel à l'API
+# Send a GET request to the API
 response = requests.get(url)
 data = response.json()
 
-# Écriture des données dans un fichier CSV
+# Path to save the CSV file
 csv_file = "data/drivers.csv"
+
+# Write the data to a CSV file
 with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
-    # 'en-tête
+    # Write CSV header
     writer.writerow(["driver_number", "broadcast_name", "full_name", "team_name", "country_code"])
-    # Écriture des données
+    # Write driver data
     for driver in data:
         writer.writerow([
             driver.get("driver_number"),
@@ -24,4 +26,4 @@ with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
             driver.get("country_code")
         ])
 
-print(" Fichier CSV créé dans le dossier data/")
+print(" CSV file created in the data/ folder.")
