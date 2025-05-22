@@ -24,16 +24,20 @@ All data comes from [openf1.org](https://openf1.org/), a free API providing:
 
 ## Project structure
 
+## Project structure
+
+```
 f1-2024-api-project/
-│
-├── data/ # CSV files exported from the API
-├── scripts/ # Python scripts for data ingestion and visualization
-│ ├── fetch_f1_data.py
-│ └── fetch_race_results.py
-├── notebooks/ # Jupyter Notebook for analysis
-│ └── f1_analysis.ipynb
-├── requirements.txt # Python dependencies
-└── README.md # You are here
+├── data/                # CSV files exported from the API
+├── scripts/             # Python scripts for data ingestion and visualization
+│   ├── fetch_f1_data.py
+│   └── fetch_race_results.py
+├── notebooks/           # Jupyter Notebook for analysis
+│   └── f1_analysis.ipynb
+├── requirements.txt     # Python dependencies
+└── README.md            # You are here
+
+``` 
 
 
 ## How to use this project
